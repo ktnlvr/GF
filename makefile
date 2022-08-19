@@ -4,3 +4,6 @@ compile:
 
 clean:
 	rm -rf ./build/
+
+wc:
+	@pandoc main.tex -t plain | wc -w
