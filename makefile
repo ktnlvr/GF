@@ -1,9 +1,13 @@
 compile:
 	mkdir -p ./build/
-	pdflatex -output-directory=build -jobname=latex main.tex
+	@make run-latex
+	@make run-latex
+
+run-latex:
+	pdflatex -output-directory=build -jobname=rulebook ./rulebook/main.tex
 
 clean:
 	rm -rf ./build/
 
 wc:
-	@pandoc main.tex -t plain | wc -w
+	@pandoc ./rulebook/main.tex -t plain | wc -w
